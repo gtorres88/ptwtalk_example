@@ -47,9 +47,21 @@ void PTW_Init(SerialDevice *dev)
 PTW_STATUS PTW_SendMessage(uint8_t cmd, uint8_t *payload, uint8_t len)
 {
 
+    /*
     MyDevice->PutChar(SOM); //send SOM
     MyDevice->PutChar(cmd); //send CMD
     MyDevice->PutChar(len); //send CMD
+
+    while(len--)
+    {
+        MyDevice->PutChar(*(payload++));
+    }
+
+    MyDevice->PutChar(0x00); //CRC
+
+    MyDevice->PutChar(EOM); //EOM
+
+    */
 
     return PTW_SUCCESS;
 }
