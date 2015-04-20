@@ -26,7 +26,7 @@
 /****************************************************************************
  *                              PRIVATE DATA                                *
  ****************************************************************************/
-
+static SerialDevice *MyDevice;
 /****************************************************************************
  *                             EXTERNAL DATA                                *
  ****************************************************************************/
@@ -40,18 +40,24 @@
  ****************************************************************************/
 void PTW_Init(SerialDevice *dev)
 {
-
+    MyDevice = dev;
 }
 
 
 PTW_STATUS PTW_SendMessage(uint8_t cmd, uint8_t *payload, uint8_t len)
 {
 
+    MyDevice->PutChar(SOM); //send SOM
+    MyDevice->PutChar(cmd); //send CMD
+    MyDevice->PutChar(len); //send CMD
+
+    return PTW_SUCCESS;
 }
 
 PTW_STATUS PTW_RegisterMessageHandler(MessageCallback *cb)
 {
 
+    return PTW_SUCCESS;
 }
 
 
