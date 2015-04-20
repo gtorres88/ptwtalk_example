@@ -45,9 +45,16 @@ void tearDown(void)
 {
 }
 
-void testsimpleShouldDoSomething(void)
+void test_AddNumbersShouldAddCorrectly(void)
 {
-    TEST_FAIL_MESSAGE("simple has no tests!");
+    uint8_t result = AddNumbers(2, 4);
+    TEST_ASSERT_EQUAL(6, result);
+}
+
+void test_AddNumbersShouldHandleOverflow(void)
+{
+    uint8_t result = AddNumbers(0xFF, 1);
+    TEST_ASSERT_EQUAL(0, result);
 }
 
 /****************************************************************************
