@@ -38,6 +38,22 @@
 /****************************************************************************
  *                     EXPORTED FUNCTION DEFINITIONS                        *
  ****************************************************************************/
+void PTW_Init(SerialDevice *dev)
+{
+
+}
+
+
+PTW_STATUS PTW_SendMessage(uint8_t cmd, uint8_t *payload, uint8_t len)
+{
+
+}
+
+PTW_STATUS PTW_RegisterMessageHandler(MessageCallback *cb)
+{
+
+}
+
 
 /****************************************************************************
  *                     PRIVATE FUNCTION DEFINITIONS                         *

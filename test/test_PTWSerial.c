@@ -16,6 +16,7 @@
  ****************************************************************************/
 #include "unity.h"
 #include "PTWSerial.h"
+#include "FakeSerial.h"
 
 /****************************************************************************
  *                      PRIVATE TYPES and DEFINITIONS                       *
@@ -24,7 +25,7 @@
 /****************************************************************************
  *                              PRIVATE DATA                                *
  ****************************************************************************/
-
+static SerialDevice *FakeSerial;
 /****************************************************************************
  *                             EXTERNAL DATA                                *
  ****************************************************************************/
@@ -39,16 +40,43 @@
 
 void setUp(void)
 {
+    //Create a fake serial device
+    FakeSerial = FakeSerial_Create();
+
+    //inject fake serial as a dependency to PTW module
+    PTW_Init(FakeSerial);
 }
+
+void test_SendMessageShouldPrependSOF(void)
+{
+    TEST_FAIL_MESSAGE("NOT IMPLEMENTED");
+}
+
+void test_SendMessageShouldIncludeLength(void)
+{
+    TEST_FAIL_MESSAGE("NOT IMPLEMENTED");
+}
+
+void test_SendMessageShouldIncludeCMD(void)
+{
+    TEST_FAIL_MESSAGE("NOT IMPLEMENTED");
+}
+
+void test_SendMessageShouldIncludeEOF(void)
+{
+    TEST_FAIL_MESSAGE("NOT IMPLEMENTED");
+}
+
+void test_SendMessageShouldIncludePayload(void)
+{
+    TEST_FAIL_MESSAGE("NOT IMPLEMENTED");
+}
+
 
 void tearDown(void)
 {
 }
 
-void testPTWSerialShouldDoSomething(void)
-{
-    TEST_FAIL_MESSAGE("PTWSerial has no tests!");
-}
 
 /****************************************************************************
  *                     PRIVATE FUNCTION DEFINITIONS                         *
