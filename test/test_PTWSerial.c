@@ -120,7 +120,7 @@ void test_SendMessageShouldIncludeEOM(void)
 void test_SendMessageShouldIncludePayload(void)
 {
     TEST_IGNORE_MESSAGE("NOT IMPLEMENTED");
-    
+
     uint8_t payload[] = TEST_PAYLOAD;
 
     //send message
